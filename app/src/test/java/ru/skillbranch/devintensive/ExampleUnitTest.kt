@@ -29,6 +29,21 @@ class ExampleUnitTest {
 
         println("$user1\n\n$user2\n\n$user3")
     }
+    @Test
+    fun test_user_builder() {
+        val date = Date()
+        val user01 = User.Builder().id("1").firstName("John").lastName("Wick").build()
+        val user03 = User.Builder().id("3").firstName("John").lastName("Mnemonic").lastVisit(date).isOnline(true).build()
+
+        val user1 = User("1", "John", "Wick")
+        val user3 = User("3", "John", "Mnemonic", null, lastVisit = date, isOnline = true)
+
+        println("$user01\n\n$user03")
+        println("$user1\n\n$user3")
+
+        assertEquals(user01, user1)
+        assertEquals(user03, user3)
+    }
 
     @Test
     fun test_user_factory() {
