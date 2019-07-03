@@ -24,7 +24,7 @@ data class User(
     constructor(id: String): this(id, "John", "Doe $id")
 
     init{
-        println("Hail Gydra")
+//        println("Hail Gydra")
     }
 
     /*override fun toString(): String {
