@@ -125,7 +125,7 @@ class ExampleUnitTest {
         assertEquals(Utils.toInitials(null, "Zverev"), "Z")
         assertEquals(Utils.toInitials("Gitlar", null), "G")
         assertEquals(Utils.toInitials(null, null), null)
-        assertEquals(Utils.toInitials("", ""), null)
+        assertEquals(Utils.toInitials(" ", ""), null)
 
     }
 

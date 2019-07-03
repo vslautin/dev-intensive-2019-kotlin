@@ -11,7 +11,7 @@ object Utils{
     fun toInitials(firstName:String?, lastName:String?): String?{
         val firstLetter:String = firstName?.take(1)?.capitalize().orEmpty()
         val secondLetter:String = lastName?.take(1)?.capitalize().orEmpty()
-        return "$firstLetter$secondLetter".ifEmpty { null }
+        return "$firstLetter$secondLetter".ifBlank { null }
     }
 
     fun transliteration(payload:String, divider:String = " "): String{
