@@ -96,6 +96,7 @@ class ExampleUnitTest {
     @Test
     fun test_util_initials() {
         assertEquals(Utils.toInitials("Adolf", "Putin"), "AP")
+        assertEquals(Utils.toInitials("robert", "rodrigez"), "RR")
         assertEquals(Utils.toInitials("", "Zverev"), "Z")
         assertEquals(Utils.toInitials("Gitlar", ""), "G")
         assertEquals(Utils.toInitials(null, "Zverev"), "Z")
