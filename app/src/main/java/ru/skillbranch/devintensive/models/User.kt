@@ -21,25 +21,6 @@ data class User(
         avatar = null
     )
 
-    constructor(id: String): this(id, "John", "Doe $id")
-
-    init{
-//        println("Hail Gydra")
-    }
-
-    /*override fun toString(): String {
-        return("""
-                id: $id
-                firstName: $firstName
-                lastName: $lastName
-                avatar: $avatar
-                rating: $rating
-                respect: $respect
-                lastVisit: $lastVisit
-                isOnline: $isOnline
-                """.trimIndent())
-    }*/
-
     companion object Factory{
         var lastId: Int = -1
 

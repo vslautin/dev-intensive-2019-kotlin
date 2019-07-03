@@ -13,11 +13,13 @@ abstract class BaseMessage(
 
     companion object AbstractFactory{
         var lastId:Int = -1
-        fun makeMessage(from: User?, chat:Chat, date:Date = Date(), type:String="text", payload:Any, isIncoming: Boolean = false):BaseMessage{
+
+        fun makeMessage(from: User, chat:Chat, date:Date = Date(), type:String="text", payload:String, isIncoming: Boolean = false):BaseMessage{
             lastId++
             return when(type){
-                "image" -> ImageMessage("$lastId", from, chat, isIncoming, image = payload as String?, date = date)
-                else ->  TextMessage("$lastId", from, chat, isIncoming, text = payload as String?, date = date)
+                "image" -> ImageMessage("$lastId", from, chat, isIncoming, image = payload , date = date)
+                "text" ->  TextMessage("$lastId", from, chat, isIncoming, text = payload , date = date)
+                else -> throw IllegalArgumentException("wrong message type")
             }
         }
     }

@@ -23,7 +23,7 @@ class ExampleUnitTest {
 
     @Test
     fun test_user_instance() {
-        val user1 = User("1")
+        val user1 = User("1", "John", "Wick")
         val user2 = User("2", "John", "Wick")
         val user3 = User("3", "John", "Mnemonic", null, lastVisit = Date(), isOnline = true)
 
@@ -55,7 +55,7 @@ class ExampleUnitTest {
         var responseImageMessage = BaseMessage.makeMessage(
             user,
             pornoChat,
-            type = "text",
+            type = "image",
             payload = "thats_it_questionmark.jpg",
             isIncoming = true,
             date = date.add(1, TimeUnits.HOUR)
@@ -63,6 +63,13 @@ class ExampleUnitTest {
         println(textMessage.formatMessage())
         println(imageMessage.formatMessage())
         println(responseImageMessage.formatMessage())
+
+        assertEquals(textMessage.formatMessage(), "id:0 Tupak отправил сообщение \"Hi! How r u?\" ${date.format()}")
+        assertEquals(imageMessage.formatMessage(), "id:1 Lara получил изображение \"big_dick.jpg\" ${date.add(1, TimeUnits.MINUTE).format()}")
+        assertEquals(responseImageMessage.formatMessage(), "id:2 Tupak получил изображение \"thats_it_questionmark.jpg\" ${date.add(1, TimeUnits.HOUR).format()}")
+
+
+
     }
 
     @Test
@@ -85,6 +92,7 @@ class ExampleUnitTest {
         assertEquals(currentDate.add(7, TimeUnits.DAY).humanizeDiff(currentDate), "через 7 дней")
         assertEquals(currentDate.add(-400, TimeUnits.DAY).humanizeDiff(currentDate), "более года назад")
         assertEquals(currentDate.add(400, TimeUnits.DAY).humanizeDiff(currentDate), "более чем через год")
+        assertEquals(currentDate.add(-30, TimeUnits.SECOND).humanizeDiff(currentDate), "несколько секунд назад")
     }
 
     @Test

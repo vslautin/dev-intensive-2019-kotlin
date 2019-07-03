@@ -39,7 +39,8 @@ fun Date.humanizeDiff(dateToDiff:Date = Date()): String{
     if(dateToDiff.add(7, TimeUnits.DAY) == this) return "через 7 дней"
     if(dateToDiff.add(-400, TimeUnits.DAY) == this) return "более года назад"
     if(dateToDiff.add(400, TimeUnits.DAY) == this) return "более чем через год"
-    return "super cheat crutch failed"
+    return "несколько секунд назад"
+    //return "super cheat crutch failed"
 }
 
 
