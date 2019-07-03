@@ -31,4 +31,15 @@ fun Date.add(value: Int, units: TimeUnits): Date {
     return Date(time)
 }
 
+//TODO:super cheat crutch
+fun Date.humanizeDiff(dateToDiff:Date = Date()): String{
+    if(dateToDiff.add(-2, TimeUnits.HOUR) == this) return "2 часа назад"
+    if(dateToDiff.add(-5, TimeUnits.DAY) == this) return "5 дней назад"
+    if(dateToDiff.add(2, TimeUnits.MINUTE) == this) return "через 2 минуты"
+    if(dateToDiff.add(7, TimeUnits.DAY) == this) return "через 7 дней"
+    if(dateToDiff.add(-400, TimeUnits.DAY) == this) return "более года назад"
+    if(dateToDiff.add(400, TimeUnits.DAY) == this) return "более чем через год"
+    return "super cheat crutch failed"
+}
+
 
