@@ -129,7 +129,13 @@ class ExampleUnitTest {
         assertEquals(Utils.toInitials("Gitlar", null), "G")
         assertEquals(Utils.toInitials(null, null), null)
         assertEquals(Utils.toInitials(" ", ""), null)
+    }
 
+    @Test
+    fun test_string_truncate() {
+        assertEquals("Bender Bending R...", "Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate())
+        assertEquals("Bender Bending...", "Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate(15))
+        assertEquals("A", "A     ".truncate(3))
     }
 
 
