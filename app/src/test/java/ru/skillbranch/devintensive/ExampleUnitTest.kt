@@ -145,4 +145,22 @@ class ExampleUnitTest {
         println("${user1.getUserView()}\n${user2.getUserView()}\n${user3.getUserView()}")
 
     }
+
+    @Test
+    fun test_timeunits_plural() {
+        assertEquals( "30 секунд", TimeUnits.SECOND.plural(30))
+        assertEquals( "93 секунды", TimeUnits.SECOND.plural(93))
+        assertEquals( "101 секунду", TimeUnits.SECOND.plural(101))
+        assertEquals( "2 минуты",TimeUnits.MINUTE.plural(2))
+        assertEquals( "55 минут",TimeUnits.MINUTE.plural(55))
+        assertEquals( "10001 минуту",TimeUnits.MINUTE.plural(10001))
+        assertEquals( "2 часа", TimeUnits.HOUR.plural(2))
+        assertEquals( "19 часов", TimeUnits.HOUR.plural(19))
+        assertEquals( "103451 час", TimeUnits.HOUR.plural(103451))
+        assertEquals( "5 дней", TimeUnits.DAY.plural(5))
+        assertEquals( "7 дней",TimeUnits.DAY.plural(7))
+        assertEquals( "1 год", TimeUnits.YEAR.plural(1))
+        assertEquals( "400 лет", TimeUnits.YEAR.plural(400))
+        assertEquals( "42 года", TimeUnits.YEAR.plural(42))
+    }
 }
