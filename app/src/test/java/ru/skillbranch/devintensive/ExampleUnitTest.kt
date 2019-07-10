@@ -101,12 +101,12 @@ class ExampleUnitTest {
         assertEquals( "5 дней назад", currentDate.add(-5, TimeUnits.DAY).humanizeDiff(currentDate))
         assertEquals( "через 2 минуты", currentDate.add(2, TimeUnits.MINUTE).humanizeDiff(currentDate))
         assertEquals( "через 7 дней", currentDate.add(7, TimeUnits.DAY).humanizeDiff(currentDate))
-        assertEquals( "1 год назад", currentDate.add(-400, TimeUnits.DAY).humanizeDiff(currentDate))
-        assertEquals( "через 1 год", currentDate.add(400, TimeUnits.DAY).humanizeDiff(currentDate))
-        assertEquals( "30 секунд назад", currentDate.add(-30, TimeUnits.SECOND).humanizeDiff(currentDate))
-//        assertEquals( "более года назад", currentDate.add(-400, TimeUnits.DAY).humanizeDiff(currentDate))
-//        assertEquals( "более чем через год", currentDate.add(400, TimeUnits.DAY).humanizeDiff(currentDate))
-//        assertEquals( "несколько секунд назад", currentDate.add(-30, TimeUnits.SECOND).humanizeDiff(currentDate))
+//        assertEquals( "1 год назад", currentDate.add(-400, TimeUnits.DAY).humanizeDiff(currentDate))
+//        assertEquals( "через 1 год", currentDate.add(400, TimeUnits.DAY).humanizeDiff(currentDate))
+//        assertEquals( "30 секунд назад", currentDate.add(-30, TimeUnits.SECOND).humanizeDiff(currentDate))
+        assertEquals( "более года назад", currentDate.add(-400, TimeUnits.DAY).humanizeDiff(currentDate))
+        assertEquals( "более чем через год", currentDate.add(400, TimeUnits.DAY).humanizeDiff(currentDate))
+        assertEquals( "несколько секунд назад", currentDate.add(-30, TimeUnits.SECOND).humanizeDiff(currentDate))
     }
 
     @Test
