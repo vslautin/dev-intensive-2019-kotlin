@@ -16,10 +16,6 @@ import java.util.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
-    }
 
     @Test
     fun test_user_instance() {
@@ -136,6 +132,32 @@ class ExampleUnitTest {
         assertEquals("Bender Bending R...", "Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate())
         assertEquals("Bender Bending...", "Bender Bending Rodriguez — дословно «Сгибальщик Сгибающий Родригес»".truncate(15))
         assertEquals("A", "A     ".truncate(3))
+    }
+
+    @Test
+    fun test_string_stripHtml() {
+        assertEquals("Образовательное IT-сообщество Skill Branch", "<p class=\"title\">Образовательное IT-сообщество Skill Branch</p>".stripHtml())
+        assertEquals("Образовательное IT-сообщество Skill Branch", "<p>Образовательное       IT-сообщество Skill Branch</p>".stripHtml())
+        assertEquals("HTML Document Этот текст будет полужирным, а этот — ещё и курсивным.", """<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>HTML Document</title>
+   </head>
+   <body>
+      <p>
+         <b>
+            Этот текст будет полужирным, <i>а этот — ещё и курсивным</i>.
+         </b>
+      </p>
+   </body>
+</html>""".stripHtml())
+
+    }
+
+    @Test
+    fun test_string_stripBlanks() {
+        assertEquals("Образовательное IT-сообщество Skill Branch", " Образовательное     IT-сообщество  Skill   Branch ".stripBlanks())
     }
 
 
