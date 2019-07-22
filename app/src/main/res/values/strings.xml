@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dev-intensive</string>
+    <string name="crying_girl_description">Crying Girl</string>
+    <string name="text_hint">Type text here</string>
 </resources>
